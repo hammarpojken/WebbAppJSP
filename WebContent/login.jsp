@@ -25,10 +25,10 @@
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label style="margin-right: 15px;">
-                        <input type="checkbox" value="patient" name="Patient"> Patient
+                        <input type="radio" value="patient" name="proff"> Patient
                     </label>
                      <label>
-                        <input type="checkbox" value="staff" name="Staff"> Staff
+                        <input type="radio" value="staff" name="proff"> Staff
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Klar</button>

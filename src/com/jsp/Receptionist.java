@@ -1,3 +1,4 @@
+package com.jsp;
 
 
 public class Receptionist extends Person {

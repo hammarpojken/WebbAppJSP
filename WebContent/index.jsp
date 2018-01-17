@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="com.jsp.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +12,8 @@
 <title>Login</title>
 </head>
 <body>
+
+
 
 <div class="container">
 	<div class="row">
@@ -37,8 +39,29 @@
                        <th>Delete</th>
                    </thead>
     <tbody>
-    
-    <tr>
+    <%
+	LoginDao ld = new LoginDao();
+	ld.getPatients();
+	for(int i = 0; i < ld.data.size(); i++) {
+		
+		out.println("<tr>");
+		out.println("<td><input type=\"checkbox\" class=\"checkthis\" /></td>");
+		out.println("<td>"+ ld.data.get(i).getFname() + "</td>");
+		out.println("<td>"+ ld.data.get(i).getLname() + "</td>");
+		out.println("<td>"+ ld.data.get(i).getSsn() + "</td>");
+		out.println("<td>"+ ld.data.get(i).getAdress() + "</td>");
+		out.println("<td>"+ ld.data.get(i).getPhone() + "</td>");
+		out.println("<td><p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\"></span></button></p></td>");
+		out.println("<td><p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" ><span class=\"glyphicon glyphicon-trash\"></span></button></p></td>");
+	    out.println("</tr>");
+	  
+	    
+		
+	}
+
+
+%>
+  <tr>
     <td><input type="checkbox" class="checkthis" /></td>
     <td><% %>Mohsin</td>
     <td>Irshad</td>

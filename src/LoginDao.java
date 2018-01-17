@@ -2,13 +2,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 
 
 public class LoginDao {
 	
-	
+	public ObservableList<Patient> data = FXCollections.observableArrayList();
 	
 	public boolean check(String prof, String uname, String password) {
 		String query = "select * from "+prof+" where username=? and password=?";
@@ -39,5 +44,52 @@ public class LoginDao {
 		
 		return false;
 	}
+	
+	
+	public void getPatients() throws ClassNotFoundException{
+		Connection con;
+		ResultSet rs;
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+		con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
+		Statement st = con.createStatement();
+		 rs = st.executeQuery("SELECT * FROM mydb.patient;");
+		 
+		 while(rs.next()){
+			 data.add(new Patient(
+					 rs.getLong("ssn"),
+					 rs.getString("fname"),
+					 rs.getString("lname"),
+					 rs.getLong("phone"),
+					 rs.getString("username"),
+					 rs.getString("password"),
+					 rs.getString("adress"),
+					 rs.getInt("zipcode"),
+					 rs.getString("role"),
+					 rs.getLong("doctorid"),
+					 rs.getString("gender"),
+					 rs.getInt("status_patient"),
+					 rs.getDate("checkin_date"),
+					 rs.getTime("checkin_date"),
+					 rs.getDate("checkout_date"),
+					 rs.getTime("checkout_date"),
+					 rs.getInt("room"),
+					 rs.getString("blood_type")));
+			 
+			 
+		 }
 
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		
+
+	}
+	
+	
+	}
+	
 }
+	
+
+	

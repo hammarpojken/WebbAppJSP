@@ -38,8 +38,8 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("password");
-		String prof = request.getParameter("Staff");
-		String prof2 = request.getParameter("Patient");
+		String prof = request.getParameter("proff");
+		
 		String page = "login.jsp";
 		
 		LoginDao dao = new LoginDao();
@@ -48,11 +48,8 @@ public class Login extends HttpServlet {
 			if(dao.check(prof, uname, pass))
 				page = "index.jsp";
 		}
-		if (prof2 !=null) {
-			if(dao.check(prof2, uname, pass)) {
-				page = "index.jsp";
-			}
-		}
+		
+		
 		
 			response.sendRedirect(page);
 		

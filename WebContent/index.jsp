@@ -15,6 +15,7 @@
 
 
 
+
 <div class="container">
 	<div class="row">
 		
@@ -168,7 +169,7 @@
         </div>
       </div>
           <div class="modal-footer ">
-        <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+        <button onclick= "c()" type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
       </div>
         </div>
     <!-- /.modal-content --> 

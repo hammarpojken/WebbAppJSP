@@ -156,7 +156,7 @@
       </div>
           <div class="modal-body">
           <div class="form-group">
-        <input class="form-control " type="text" placeholder="Mohsin">
+        <input class="form-control " type="text" placeholder="">
         </div>
         <div class="form-group">
         

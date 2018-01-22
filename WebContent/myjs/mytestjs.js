@@ -8,12 +8,14 @@ function hola() {
 
 
 function b() {
-    $('#delete').on('shown.bs.modal', function (event) {
+		$('#delete').on('hidden.bs.modal', function (event) {
+            
        var c = event.relatedTarget.parentElement.parentElement.parentElement;
-        c.innerHTML = "";
-            delete c;
+        console.log(c);
     });
 }
+  
+
 
 function c() {
     $('#edit').on('shown.bs.modal', function (event) {

@@ -110,7 +110,7 @@
           <div class="form-group">
 
         <input id="firstname" name="firstName" class="form-control " type="text" placeholder="">
-
+		<input id="ssn" name="ssn" class="form-control " type="hidden" placeholder="">
         </div>
         <div class="form-group">
         
@@ -164,7 +164,7 @@
     	var c = event.relatedTarget;
             console.log(c);
     	console.log(event.target);
-            console.log(event.);
+     //       console.log(event.);
             
     	
        
@@ -184,6 +184,11 @@
             
     var adress = document.getElementById("adress");
         adress.placeholder = c[7].textContent;
+            
+  //  var ssn = document.getElementById("ssn");
+  //      ssn.placeholder = c[].textContent
+            
+            console.log(c);
        
     	
     });

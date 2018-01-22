@@ -97,7 +97,7 @@ public class LoginDao {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
 			PreparedStatement st = null;
-			if(prof != null) {
+			if(true) {
 				st = con.prepareStatement(query);
 				st.setString(1, fname);
 				st.setString(2, lname);

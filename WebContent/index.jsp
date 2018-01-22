@@ -105,7 +105,7 @@
         <button type="button" onclick="" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
         <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
       </div>
-      <form action="">
+      <form>
           <div class="modal-body">
           <div class="form-group">
 
@@ -125,7 +125,7 @@
           <div class="modal-footer ">
         <button onclick="" type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
       </div>
-      </form>
+      	</form>
         </div>
     <!-- /.modal-content --> 
   </div>
@@ -159,18 +159,7 @@
     <script src="myjs/mytestjs.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
-    $( document ).ready(function(){
-        $('#delete').on('hidden.bs.modal', function (event) {
-    	var c = event.relatedTarget;
-            console.log(c);
-    	console.log(event.target);
-            console.log(event.);
-            
-    	
-       
-    	
-    });
-    }); 
+
     
     $( document ).ready(function(){
         $('#edit').on('show.bs.modal', function (event) {

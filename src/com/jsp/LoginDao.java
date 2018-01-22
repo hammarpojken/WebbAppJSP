@@ -91,21 +91,21 @@ public class LoginDao {
 	
 	}
 	
-	public void updatePerson(String fname, String lname, String adress, long ssn){
+	public void updatePerson(String fname, String lname, String adress, String ssn){
 		String query = "UPDATE mydb.resultcard SET fname =?, lname=?, adress=? where ssn=?";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
 			PreparedStatement st = null;
-			if(prof != null) {
+			
 				st = con.prepareStatement(query);
 				st.setString(1, fname);
 				st.setString(2, lname);
 				st.setString(3, adress);
-				st.setLong(4, ssn);
+				st.setString(4, ssn);
 				
 				
-			}
+			
 		}
 			catch(Exception e) {
 				

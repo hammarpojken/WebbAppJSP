@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/Login")
+@WebServlet("/UpdatePeopleDao")
 public class UpdatePeopleDao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,11 +39,12 @@ public class UpdatePeopleDao extends HttpServlet {
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String adress = request.getParameter("adress");
+		String ssn = request.getParameter("ssn");
 		
 		
 		
 		LoginDao dao = new LoginDao();
-		dao.updatePerson(firstName, lastName, adress);
+		dao.updatePerson(firstName, lastName, adress, ssn);
 		
 		
 	}

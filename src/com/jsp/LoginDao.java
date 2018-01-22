@@ -47,6 +47,7 @@ public class LoginDao {
 	}
 	
 	
+	
 	public void getPatients() throws ClassNotFoundException{
 		Connection con;
 		ResultSet rs;

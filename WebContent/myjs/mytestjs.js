@@ -17,9 +17,11 @@ function b() {
 
 function c() {
     $('#edit').on('shown.bs.modal', function (event) {
-       var c = event.relatedTarget.parentElement.parentElement.parentElement;
-        console.log(c);
+     
+    	
+    	
     });
+    
 }
 //function deleteSome() {
 //    

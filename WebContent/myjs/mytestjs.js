@@ -27,6 +27,8 @@ function c() {
     });
     
 }
+
+
 //function deleteSome() {
 //    
 //    var b = document.getElementsByClassName("checkthis");

@@ -29,16 +29,17 @@ function c() {
 }
 
 
-//function deleteSome() {
-//    
-//    var b = document.getElementsByClassName("checkthis");
-//        
-//    for(var i = 0; i< b.length; i++) {
-//        if(b[i].checked == true) {
-//            var a = b[i].parentElement.parentElement.getAttribute("id");
-//            var c = document.getElementById(a);
-//            c.innerHTML = "";
-//            delete c;
-//        }
-//    }
-//}
+
+function deletePerson(id) {
+    $('#yesDelete').on('click', function(event)  {
+       var person = document.getElementById("" + id);
+        
+        id.innerHTML = "";
+        delete id;
+        $('#delete').modal('hide');
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
+        
+        
+});
+}

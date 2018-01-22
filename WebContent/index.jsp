@@ -54,7 +54,7 @@
 		out.println("<td>"+ ld.data.get(i).getAdress() + "</td>");
 		out.println("<td>"+ ld.data.get(i).getPhone() + "</td>");
 		out.println("<td><p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\"></span></button></p></td>");
-		out.println("<td><p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" ><span class=\"glyphicon glyphicon-trash\"></span></button></p></td>");
+		out.println("<td><p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button onclick=\"deletePerson(tr" + i +")\" class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" ><span class=\"glyphicon glyphicon-trash\"></span></button></p></td>");
 	    out.println("</tr>");
 	  
 	}
@@ -134,10 +134,13 @@
        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
        
       </div>
+      <form action="DeletePeopleDao" method="post">
         <div class="modal-footer ">
-        <button onclick="b()" type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+        <input id="SSN" name="ssn" class="form-control " type="hidden" placeholder="">
+        <button id="yesDelete" type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
       </div>
+      </form>
         </div>
     <!-- /.modal-content --> 
   </div>
@@ -147,7 +150,19 @@
     <script src="myjs/mytestjs.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
-
+    $( document ).ready(function(){
+        $('#delete').on('show.bs.modal', function (event) {
+    	var c = event.relatedTarget.parentElement.parentElement.parentElement.childNodes;
+    	
+            
+    var ssn = document.getElementById("SSN");
+        ssn.value = c[7].textContent
+            
+            console.log(c);
+       
+    	
+    });
+    }); 
     
     $( document ).ready(function(){
         $('#edit').on('show.bs.modal', function (event) {

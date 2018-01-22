@@ -116,6 +116,29 @@ public class LoginDao {
 		
 		
 	}
+	public void deletePerson(String ssn) {
+	String query = "DELETE FROM mydb.patient where ssn=?";
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
+		PreparedStatement st = null;
+
+			st = con.prepareStatement(query);
+			st.setString(1, ssn);
+
+			System.out.println(query);
+			System.out.println(st.toString());
+			st.execute();
+			
+			
+		
+	}
+		catch(Exception e) {
+			
+		}
+	
+	
+}
 	
 }
 	

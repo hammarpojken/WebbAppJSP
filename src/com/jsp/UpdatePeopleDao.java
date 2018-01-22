@@ -44,7 +44,9 @@ public class UpdatePeopleDao extends HttpServlet {
 		
 		
 		LoginDao dao = new LoginDao();
+
 		dao.updatePerson(firstName, lastName, adress, ssn);
+
 		
 		
 	}

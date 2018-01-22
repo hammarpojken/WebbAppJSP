@@ -16,9 +16,11 @@ function b() {
 }
 
 function c() {
-    $('#edit').on('shown.bs.modal', function (event) {
-     
+    $('#edit').on('show.bs.modal', function (event) {
+    	var c = event.relatedTarget.parentElement.parentElement.parentElement.childNodes;
     	
+    var a = document.getElementById("firstname");
+        a.getAttribute("placeholder").value = c[1];
     	
     });
     

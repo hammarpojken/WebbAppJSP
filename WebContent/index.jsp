@@ -62,19 +62,7 @@
 
 
 %>
-  <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td><% %>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button onclick="c()" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
-    
-   
+     
     
     </tbody>
         
@@ -105,7 +93,7 @@
         <button type="button" onclick="" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
         <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
       </div>
-      <form>
+      <form action="UpdatePeopleDao" method="post">
           <div class="modal-body">
           <div class="form-group">
 
@@ -123,7 +111,7 @@
         </div>
       </div>
           <div class="modal-footer ">
-        <button onclick="" type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+        <button onclick="" type="submit" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
       </div>
       	</form>
         </div>
@@ -166,16 +154,16 @@
     	var c = event.relatedTarget.parentElement.parentElement.parentElement.childNodes;
     	
     var firstname = document.getElementById("firstname");
-        firstname.placeholder = c[3].textContent;
+        firstname.value = c[3].textContent;
     
     var lastname = document.getElementById("lastname");
-        lastname.placeholder = c[5].textContent;
+        lastname.value = c[5].textContent;
             
     var adress = document.getElementById("adress");
-        adress.placeholder = c[7].textContent;
+        adress.value = c[9].textContent;
             
-  //  var ssn = document.getElementById("ssn");
-  //      ssn.placeholder = c[].textContent
+    var ssn = document.getElementById("ssn");
+        ssn.value = c[7].textContent
             
             console.log(c);
        

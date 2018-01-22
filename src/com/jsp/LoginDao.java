@@ -92,7 +92,7 @@ public class LoginDao {
 	}
 	
 	public void updatePerson(String fname, String lname, String adress, String ssn){
-		String query = "UPDATE mydb.resultcard SET fname =?, lname=?, adress=? where ssn=?";
+		String query = "UPDATE mydb.patient SET fname =?, lname=?, adress=? where ssn=?";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
@@ -103,6 +103,9 @@ public class LoginDao {
 				st.setString(2, lname);
 				st.setString(3, adress);
 				st.setString(4, ssn);
+				System.out.println(query);
+				System.out.println(st.toString());
+				st.execute();
 				
 				
 			
